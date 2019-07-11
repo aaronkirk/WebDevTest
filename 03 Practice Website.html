@@ -1,0 +1,329 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title>
+		PASCAL'S TRIANGLE
+	</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<style type="text/css">
+
+		* {
+			padding: 0px;
+			margin: 0px;
+		}
+
+		body {
+			//background-color: linen;
+		}
+
+		#wrapper {
+			max-width: 1200px;
+			background-color: white;
+			margin: auto;
+		}
+
+
+		#main-header {
+		}
+
+		#main-header-i {
+			overflow: hidden;		
+			padding: 20px 0px;
+			//background-color: coral;
+			text-align: center;
+			font-size:x-large;
+		}
+		
+		#header-text {
+			text-align: center;
+			line-height: 60px;
+		}
+
+		#hamburgerIcon {
+			display: none;
+			float: right;
+        }
+
+		#hamburgerIcon2 {
+			display: none;
+			float: left;
+        }
+
+		#nav-menu {
+			width: 10%;
+			//background-color: lightgreen;
+
+		}
+
+		#nav-menu-i {
+			text-align: center;
+			min-width: 155px;
+		}
+
+			#nav-menu-i a {
+				display: block;
+				//background-color: lightgreen;
+				text-align: center;
+				text-decoration: none;
+				font-weight: bold;
+				padding: 0px 0px;
+				
+			}
+
+				#nav-menu-i a:hover {
+					background-image: none;
+					background-color: lightseagreen;
+					text-decoration: underline;
+				}
+
+
+			#nav-menu-i #closebtn {
+				position: absolute;
+				top: 40px;
+				right: 45px;
+				font-size: 60px;
+				line-height: 40px;
+				z-index: 999;
+				display: none;
+				background-color: red;
+			}
+
+
+			#nav-menu-i ul {
+				list-style: none;
+				width: 100%;
+				position: relative;
+			}
+
+			#nav-menu-i li {
+				width: 100%;
+				line-height: 58px;
+			}
+
+		#main-content {
+			//background-color: lightpink;
+			width: 60%;
+		}
+
+		#main-content-i {
+			text-align: left;
+			padding: 20px 20px;
+		}
+
+		#main-sidebar {
+			//background-color: lightblue;
+		}
+
+		#main-sidebar-i {
+			text-align: center;
+			padding: 20px 0px;
+		}
+
+		#main-footer {
+			//background-color: plum;
+		}
+
+		#main-footer-i {
+			text-align: center;
+			padding: 20px 0px;
+		}
+
+
+		#pascalTriGif {
+			float: right;
+			width: 30%;
+			height: auto;
+			max-width: 148px;
+		}
+
+		#pascalsTriPng {
+			width: 100%;
+			height: auto;
+		}
+
+		.lid {
+			clear: both;
+			height: 0px;
+			width: 100%;
+			overflow: hidden;
+		}
+
+		.row {
+			display: table;
+			width: 100%;
+		}
+
+		.col {
+			display: table-cell;
+		}
+
+
+
+
+		@media only screen and (max-width: 800px) {
+			#nav-menu {
+				height: 100%;
+				width: 0;
+				min-width: 0;
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 100;
+				background-color: rgb(0,0,0);
+				background-color: rgba(0, 0, 0, 0.74);
+				overflow-x: hidden;
+				transition: 0.5s;
+			}
+
+			#main-header-i #hamburgerIcon {
+				display: inline;
+				//background-color: purple;
+				line-height: 60px;
+			}
+
+			#main-header-i #hamburgerIcon2 {
+				display: inline;
+				background-color: purple;
+				color: coral;
+				line-height: 60px;
+				visibility: hidden;
+			}
+
+			#nav-menu-i #closebtn {
+				display: block;
+			}
+
+			#main-content {
+				width: 100%;
+				display: block;
+			}
+
+			#main-sidebar {
+				width: 100%;
+				display: block;
+			}
+
+			.row {
+				display: block;
+			}
+		}
+	</style>
+
+	<script>
+		function openNav() {
+			console.log("Open Nav Clicked");
+			document.getElementById("nav-menu").style.width = "100%";
+		}
+
+		function closeNav() {
+			console.log("Close Nav Clicked");
+			document.getElementById("nav-menu").style.width = "0%";
+		}
+	</script>
+
+</head>
+<body>
+
+
+	<div id="wrapper">
+
+		<header id="main-header">
+			<div id="main-header-i">
+				<span id="hamburgerIcon2" style="font-size:60px;cursor:pointer" onclick="openNav()">&#9776;</span>
+				<span id="header-text"><strong>PASCAL'S TRIANGLE</strong></span>
+				<span id="hamburgerIcon" style="font-size:60px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+			</div>
+
+		</header>
+
+		<div class="lid">&nbsp;</div>
+
+		<div id="main-content-area" class="row">
+
+			<nav id="nav-menu" class="col">
+				<div id="nav-menu-i">
+					<a href="javascript:void(0)" id="closebtn" onclick="closeNav()">&times;</a>
+					<ul>
+						<li><a href="https://mycourseresource.com/index.php"><h2>MCR Home</h2></a></li>
+						<li><a href="https://mycourseresource.com/html/tn200908002-basic-html-web-page.php?x=75&y=76"><h2>HTML & CSS</h2></a></li>
+						<li><a href="https://mycourseresource.com/javascript/tn200908008-javascript-naming-convention.php?x=64&y=172"><h2>JavaScript</h2></a></li>
+						<li><a href="https://mycourseresource.com/maths/tn201309002-math-real-numbers.php?x=7&y=41"><h2>Maths</h2></a></li>
+						<li><a href="https://mycourseresource.com/php/tn200910002-explode-split-string-array-delimiter.php?x=1&y=2"><h2>PHP</h2></a></li>
+					</ul>
+				</div>
+			</nav>
+
+			<div id="main-content" class="col">
+				<section id="main-content-i">
+					
+					<h3>
+						The Pascal's Triangle (aka Chinese Triangle) was named after French mathematician, physicist, inventor, writer and religious philosopher Blaise Pascal (1623-62).
+					</h3>
+					<div>
+						<img src="pascals-triangle-animated.gif" id="pascalTriGif" />
+						<p>
+							The number at the top row (the point) of a Pascal's Triangle is 1.
+							More numbers are placed in rows to form a triangular pattern.
+							The numbers at the start and at the end of each row are all 1.
+							Each other number inside the triangle is the sum of the two numbers above it.
+							Start with 0 when refering to rows from the top vertex to the base and start with 0 when refering to the numbers (cells or columns) in each row from left to right.
+						</p>
+						
+					</div>
+
+
+					<br />
+
+					<h3>
+						Symmetrical
+					</h3>
+					<p>
+						Dividing the Pascal's Triangle from the top vertex to the base with a line of symmetry creates two right angled triangles.
+						The numbers (nodes) on the left triangle have symmetrical matching numbers (nodes) on the right triangle.
+					</p>
+
+					<br />
+
+					<h3>
+						Possible Grid Paths
+					</h3>
+					<p>
+						The count of possible grid paths from the top node to a given node corresponds to the value of that given node.
+						As illustrated in the image below, there are four different possible ways from the top node to the node with the value of 4
+					</p>
+					<img src="pascals-triangle-possible-grid-paths.png" id="pascalsTriPng"/>
+
+
+				</section>
+			</div>
+
+			<div id="main-sidebar" class="col">
+				<aside id="main-sidebar-i">
+					Advertisement <br />
+					<img src="ads.gif" alt="Ad Missing" />
+				</aside>
+			</div>
+
+		</div>
+
+		<div class="lid">&nbsp;</div>
+
+		<footer id="main-footer">
+			<div id="main-footer-i">
+				FOOTER
+			</div>
+		</footer>
+
+
+
+	</div>
+
+	<script>closeNav();</script>
+
+</body>
+</html>
